@@ -19,8 +19,8 @@ development:
   encoding: unicode
   database: huntawesome_development
   pool: 5
-  username: huntawesome
-  password:
+  username: bengruber
+  password: Bendog1309
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
