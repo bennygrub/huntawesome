@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title HuntAwesome
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %link{:href => "http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic", :rel => "stylesheet", :type => "text/css"}
+    = csrf_meta_tags
+  %body
+    = render 'layouts/navigation'
+    -if @start == true
+      = yield
+    -else
+      #main-container.container
+        .row
+          .col-xs-12
+            - flash.each do |name, msg|
+              = content_tag :div, msg, class: "alert alert-#{name}"
+        .row
+          .col-xs-12
+            = yield

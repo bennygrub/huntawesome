@@ -1,0 +1,55 @@
+.starter-box
+  .intro-one
+    %h1 First Step Towards Awesome
+    %p Over the next 30 days, you will be scavenger hunting towards awesome by completing small fun, challenging, and exciting tasks. As you do this, you will gain Awesome points that will take you to the next level of Awesome with each level being more fullfilling than the previous.
+    %br
+    %h4 
+      %i But before we get you started with the nuts & bolts of your scavenger hunt, let's get you some Awesome points.
+    
+    %a
+      .unveil-btn-one.btn-outline.text-center
+        Click Here to Unveil Your First Task
+
+  .unveil-one
+    %h3 
+      %b Challenge: 
+      Re-Text (200 points)
+    %p=image_tag("iphone-threads.jpg", style:"max-width:80%;")
+    %p 
+      Open your text message threads and scroll back 
+      %b 3 months.
+      Pick a thread and restart the conversation. Once your done, click "complete" and earn 200 points towards awesome.
+    %p{style: "font-size:14px;"}
+      %b Don't know what to say? 
+      Try something simple like, "Long time no text" or "I was just thinking about you" or "Can you believe we haven't text since ..."
+
+    %a
+      .btn-next.unveil-btn-two.text-center
+        I Completed the Challenge (Scout's Honor)
+
+  .unveil-two
+    %h2{style:"color:rgb(0, 197, 100);"} Awesome Job. That's 200 points in the bag. Let's try one more.
+    %h3 
+      %b Challenge: 
+      Happy Selfie (300 points)
+    %p=image_tag("selfie-smile.jpg", style:"max-width:80%;")
+    %p Take a selfie of yourself with the biggest possible smile imaginable - we are talking beyond ear to ear. And then text, post to facebook, instagram or anywhere outside of your phones album and say "You Make Me Happy #huntawesome". Once you get those good vibes into the world, click complete below and we will get ready to start your month of awesomeness!
+
+    %a
+      .btn-next.unveil-btn-three.text-center
+        Challenge Completed (Cross My Heart)
+  .unveil-three
+    %h2{style:"color:rgb(0, 197, 100);"} You are definitely on your way to awesome now!
+    %h3 
+      %b Let's Quickly Get You Set Up
+    %p As we move along, your challenges will be both on and offline and will start to involve more and more fun and creative tasks. Do you want scavenger hunt to awesome with a group or would you rather keep going solo (you can add people at any point).
+    .group-vs-solo
+      =link_to root_path(solo: false) do
+        .choice-box.pull-left.text-center{style:"margin-right: 10px;"}
+          =image_tag("group-choice-2.png")
+          GROUP
+      =link_to root_path(solo: true) do 
+        .choice-box.pull-left.text-center
+          =image_tag("solo-choice.png")
+          SOLO
+      .clearfix
