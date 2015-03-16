@@ -44,11 +44,11 @@
       %b Let's Quickly Get You Set Up
     %p As we move along, your challenges will be both on and offline and will start to involve more and more fun and creative tasks. Do you want scavenger hunt to awesome with a group or would you rather keep going solo (you can add people at any point).
     .group-vs-solo
-      =link_to root_path(solo: false) do
+      =link_to new_user_registration_path(solo: false) do
         .choice-box.pull-left.text-center{style:"margin-right: 10px;"}
           =image_tag("group-choice-2.png")
           GROUP
-      =link_to root_path(solo: true) do 
+      =link_to new_user_registration_path(solo: true) do 
         .choice-box.pull-left.text-center
           =image_tag("solo-choice.png")
           SOLO

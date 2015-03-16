@@ -1,5 +1,5 @@
 Huntawesome::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
   get "pages/home"
   get "pages/contact"
   get "pages/about"

@@ -14,3 +14,11 @@ jQuery ->
   $('.unveil-btn-three').click ->
     $('.unveil-two').hide()
     $('.unveil-three').show(500)
+
+
+  $(window).resize ->
+  $('.home-center').css
+    position: 'relative'
+    top: ($(window).height() - $('.home-center').outerHeight()) / 3
+  
+  $(window).resize()
