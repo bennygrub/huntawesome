@@ -13,8 +13,16 @@
       .btn-home
         Start Hunting Awesome
         %span.glyphicon.glyphicon-chevron-right
+    %a.learn-more
+      %p{style:"font-size:22px;color:#3AA497;position:relative;"}
+        %span.glyphicon.glyphicon-circle-arrow-down
+        %span{style:"font-size:18px;"}Learn More
 
 .second-area{style:"background:#3aa497;min-height:300px;padding:35px 50px;color:white;text-shadow: 0 1px rgba(0,0,0,0.15);"}
       
   %h2.text-center Do Awesome, Be Awesome, Make Others Feel Awesome.
   %p.text-center{style:"font-size:18px;"} Living awesome isn't about doing a couple of huge things. Doing a ton of little and medium sized awesomeness each and every day creates true awesome. We help you do that in a really fun way - through a scavenger hunt.
+  =link_to pages_start_path do 
+    .home-btn-white.text-center
+      Start Hunting Awesome
+      %span.glyphicon.glyphicon-circle-arrow-right{style:"top:5px;"}

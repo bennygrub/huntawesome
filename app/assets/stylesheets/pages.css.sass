@@ -4,6 +4,15 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius:    $radius
+  -ms-border-radius:     $radius
+  border-radius:         $radius
+
+a:hover
+  text-decoration: none
+
 #main-container
   background: #fff
   min-height: 600px
@@ -105,6 +114,8 @@ body
     margin-top: 0px
   p
     font-size: 23px
+  a.learn-more
+    cursor: pointer
   
   .btn-home
     background: #826176
@@ -114,9 +125,7 @@ body
     padding: 14px 31px
     cursor: pointer
     font-weight: bold
-    -webkit-border-radius: 5px
-    -moz-border-radius: 5px
-    border-radius: 5px
+    +border-radius(5px)
     margin: 20px auto 0 auto
     width: 55%
   
@@ -130,7 +139,14 @@ body
   .glyphicon
     top: 4px !important
     text-decoration: none
-
+.home-btn-white
+  color: white
+  font-size: 22px
+  border: 1px white solid
+  width: 50%
+  margin: 40px auto 0 auto
+  padding: 5px 0
+  +border-radius(5px)
 
 input
   height: 40px
@@ -173,4 +189,7 @@ input[type="submit"]:hover
   body
     .starter-box
       width: 100%
+    .home-btn-white
+      width: 100%
+      
 
