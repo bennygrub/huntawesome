@@ -1,6 +1,23 @@
-.pull-left
-  =image_tag("group-choice-2.png", style: "width:75px;")
-.pull-left
-  %h1
-    %b= @group.first.name
-.clearfix
+.profile
+  .pull-left
+    =image_tag("group-choice-2.png", style: "width:75px;")
+  .pull-left
+    %h1
+      %b= @group.first.name
+  .pull-left
+    %b Total Points:
+
+  .clearfix
+.to-do-tasks
+  %h2 Level 1 Challenges
+  .row
+    -@tasks.each do |task|
+      =link_to task do
+        .col-xs-12.col-sm-6.col-md-4.col-lg-3{style:"margin-bottom:10px;"}
+          .task-box
+            .text-right
+              %span.point-corner=task.points
+            .text-center=image_tag("task.png", style:"width:40%;")
+            %h3.text-center=task.name
+            %p=task.description
+

@@ -1,0 +1,23 @@
+.task-show
+  .row.row-centered
+    .col-xs-12.col-sm-10.col-md-8.col-lg-6.col-centered
+      .text-center
+        =image_tag("task.png")
+        %h1
+          = @task.name
+        %h2 
+          %b Points
+          = @task.points
+        %p
+          = @task.description
+          
+        -if 2 == 3
+          %p
+            %strong Requirements:
+            = @task.requirements
+          %p
+            %strong Level:
+            = @task.level
+          = link_to 'Edit', edit_task_path(@task)
+          |
+          #{link_to 'Back', current_user}

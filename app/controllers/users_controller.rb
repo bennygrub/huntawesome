@@ -14,5 +14,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @group = @user.groups
+    @tasks = Task.where("level = ?", 1)
   end
 end

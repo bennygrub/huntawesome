@@ -12,7 +12,13 @@
 
 a:hover
   text-decoration: none
-
+.row-centered
+  text-align: center
+.col-centered
+  display: inline-block
+  float: none
+  text-align: left
+  margin-right: -4px
 #main-container
   background: #fff
   min-height: 600px
@@ -160,12 +166,28 @@ input[type="submit"]
   color: #fff !important
   cursor: pointer
   font-weight: bold
-  -webkit-border-radius: 5px
-  -moz-border-radius: 5px
-  border-radius: 5px
-
+  +border-radius(5px)
 input[type="submit"]:hover
   border-bottom: 4px solid #774C68
+
+.task-box
+  +border-radius(5px)
+  border: 1px solid lightgrey
+  padding: 10px
+  min-height: 300px
+  color: grey
+
+  .point-corner
+    color: white
+    background: rgb(133, 187, 124)
+    padding: 5px
+    +border-radius(5px)
+
+.task-show
+  padding: 30px
+
+  p
+    font-size: 18px
 
 @media only screen and (max-width : 768px)
   body .home-center
