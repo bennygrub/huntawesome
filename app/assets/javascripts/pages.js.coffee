@@ -5,15 +5,15 @@
 jQuery ->
   $('.unveil-btn-one.btn-outline.text-center').click ->
     $('.intro-one').hide()
-    $('.unveil-one').show(500)
+    $('.unveil-one').fadeIn(1000)
 
   $('.unveil-btn-two').click ->
     $('.unveil-one').hide()
-    $('.unveil-two').show(500)
+    $('.unveil-two').fadeIn(1000)
   
   $('.unveil-btn-three').click ->
     $('.unveil-two').hide()
-    $('.unveil-three').show(500)
+    $('.unveil-three').fadeIn(1000)
 
 
   $(window).resize ->
