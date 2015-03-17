@@ -1,4 +1,6 @@
 Huntawesome::Application.routes.draw do
+  resources :completed_tasks
+
   resources :tasks
 
   resources :group_users

@@ -1,6 +1,6 @@
 .profile
   .pull-left
-    =image_tag("group-choice-2.png", style: "width:75px;")
+    =image_tag("group-choice-2.png", style: "width:75px;border:1px solid lightgrey;", class: "img-circle")
   .pull-left
     %h1
       %b= @group.first.name
@@ -15,6 +15,14 @@
       =link_to task do
         .col-xs-12.col-sm-6.col-md-4.col-lg-3{style:"margin-bottom:10px;"}
           .task-box
+            - if task.completed_tasks.where("group_id = ?", @user.groups.first.id).count > 0
+              .task-completed.vcenter
+                %h3
+                  =task.name
+                %h4
+                  Completed!
+                %h2= task.points
+                %h4 Points
             .text-right
               %span.point-corner=task.points
             .text-center=image_tag("task.png", style:"width:40%;")

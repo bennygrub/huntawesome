@@ -1,0 +1,31 @@
+<h1>Listing completed_tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Group</th>
+      <th>Task</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @completed_tasks.each do |completed_task| %>
+      <tr>
+        <td><%= completed_task.user_id %></td>
+        <td><%= completed_task.group_id %></td>
+        <td><%= completed_task.task_id %></td>
+        <td><%= link_to 'Show', completed_task %></td>
+        <td><%= link_to 'Edit', edit_completed_task_path(completed_task) %></td>
+        <td><%= link_to 'Destroy', completed_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Completed task', new_completed_task_path %>

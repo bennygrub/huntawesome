@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   after_create :group_user_association
   has_many :group_users
   has_many :groups, through: :group_users
+  has_many :completed_tasks
+  has_many :tasks, through: :completed_tasks
 
   def group_user_association
     if self.group_name.blank?
