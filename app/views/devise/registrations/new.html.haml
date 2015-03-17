@@ -3,15 +3,17 @@
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
     -unless @solo == "true"
-      %p Great! Add your group name and you will be able to invite friends it.
-      = f.text_field :group_name, placeholder: "Add Your Group Name"
+      %p Great! Add your group name, & basic details and we will get you set up for the month.
+      = f.text_field :group_name, placeholder: "Add Your Group Name (you'll invite people to it in a minute)"
       %br
     -else
       %p Great! Let's get your hunt set up and ready for you.
-    = f.email_field :email, autofocus: true, placeholder: "Email"
+    = f.text_field :name, autofocus: true, placeholder: "What you want us to call you (i.e. John Smith)"
     %br
-    = f.password_field :password, autocomplete: "off", placeholder: "Password"
+    = f.email_field :email, autofocus: true, placeholder: "Email (i.e. johnsmith@gmail.com)"
     %br
-    = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Re-type Password"
+    = f.password_field :password, autocomplete: "off", placeholder: "Password (i.e. the thing you have 100's of)"
+    %br
+    = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Re-type Password (just checking you typed it right)"
     .btn-new
       = f.submit "Setup My Hunt Awesome Scavenger Hunt"

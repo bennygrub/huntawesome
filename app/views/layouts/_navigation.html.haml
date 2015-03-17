@@ -22,10 +22,10 @@
               =link_to "Sign In", new_user_session_path
             %li.divider
             %li
-              =link_to "Sign Up", new_user_registration_path
+              =link_to "Sign Up", pages_start_path
             %li.divider
             %li
-              =link_to "Beware Click With Caution", pages_faq_path
+              =link_to "Beware Click With Caution", pages_start_path
           -if current_user
             %li
               = link_to 'Logout', destroy_user_session_path, :method=>'delete', class: 'logout-mp'

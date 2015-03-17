@@ -1,5 +1,12 @@
 Huntawesome::Application.routes.draw do
+  resources :tasks
+
+  resources :group_users
+
+  resources :groups
+
   devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
+  resources :users, only: [:show]
   get "pages/home"
   get "pages/contact"
   get "pages/about"
