@@ -210,10 +210,24 @@ input[type="submit"]:hover
   p
     font-size: 18px
 
+.profile
+  margin: 15px 0 0 0
+  h1
+    margin: 0
+.navigation-area
+  margin: 30px 0 0 0
 .hunt-progress
-  background: aliceblue
+  background: rgb(246, 251, 255)
+  padding: 10px 30px
+  margin: 30px 0
   .progress
     height: 30px
+  h2
+    margin-top: 30px
+  .point-circle
+    background: green
+    +border-radius(50px)
+    padding: 8px
 @media only screen and (max-width : 768px)
   body .home-center
     width: 95%
@@ -232,6 +246,7 @@ input[type="submit"]:hover
   body
     .starter-box
       width: 80%
+
 @media only screen and (max-width : 450px)
   body
     .starter-box

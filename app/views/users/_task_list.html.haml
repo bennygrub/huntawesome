@@ -1,0 +1,19 @@
+.row
+  -@tasks.each do |task|
+    =link_to task do
+      .col-xs-12.col-sm-6.col-md-4.col-lg-3{style:"margin-bottom:10px;"}
+        .task-box
+          - if task.completed_tasks.where("group_id = ?", @user.groups.first.id).count > 0
+            .task-completed.vcenter
+              %h2
+                =task.name
+              %h4{style: "margin-bottom:0;"}
+                Completed!
+              %p="(#{task.completed_tasks.where("group_id = ?", @user.groups.first.id).first.created_at.strftime('%m/%d/%Y')})"
+              %h2= task.points
+              %h4 Points
+          .text-right
+            %span.point-corner=task.points
+          .text-center=image_tag("task.png", style:"width:40%;")
+          %h3.text-center=task.name
+          %p=task.description

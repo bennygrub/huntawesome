@@ -1,0 +1,11 @@
+.profile
+  .row
+    .col-xs-12.col-md-1
+      =image_tag("group-choice-2.png", style: "width:75px;")
+    .col-xs-12.col-md-3
+      %h1
+        %b= @group.first.name
+      %p
+        Current Level of Awesome:
+        = @level
+    .col-xs-12.col-md-8
