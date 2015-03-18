@@ -12,7 +12,11 @@ class User < ActiveRecord::Base
   has_many :tasks, through: :completed_tasks
 
   def group_user_association
-    if self.group_name.blank?
+    if Invite.where( email == self.email).count > 1
+      invite = Invite.where( email == self.email).first
+      group = Group.find(invite.group_id)
+      invite.destroy
+    elsif self.group_name.blank?
       group = Group.create(name: self.name)
     else
       group = Group.create(name: self.group_name)
