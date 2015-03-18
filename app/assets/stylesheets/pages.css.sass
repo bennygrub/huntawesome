@@ -181,12 +181,16 @@ input[type="submit"]:hover
   min-height: 300px
   color: grey
   position: relative
+  background: rgba(245, 245, 245, 0.51)
 
   .point-corner
     color: white
     background: rgb(133, 187, 124)
     padding: 5px
     +border-radius(5px)
+.task-box:hover
+  background: rgb(239, 239, 239)
+
 .task-completed
   background: rgba(66, 15, 52, 0.90)
   padding: 60px 10px 10px 10px
@@ -206,6 +210,10 @@ input[type="submit"]:hover
   p
     font-size: 18px
 
+.hunt-progress
+  background: aliceblue
+  .progress
+    height: 30px
 @media only screen and (max-width : 768px)
   body .home-center
     width: 95%

@@ -21,7 +21,7 @@
           = link_to 'Edit', edit_task_path(@task)
           |
           #{link_to 'Back', current_user}
-        - if @task.completed_tasks.where("group_id = ?", current_user.groups.first.id).count > 0
+        - if CompletedTask.where("group_id = ? AND task_id = ?", current_user.groups.first.id, @task.id).count == 0
           = form_for(@completed_task) do |f|
             - if @completed_task.errors.any?
               #error_explanation
