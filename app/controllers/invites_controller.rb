@@ -1,5 +1,7 @@
 class InvitesController < ApplicationController
   before_action :set_invite, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
+  before_action :admin, only: [:index, :show, :edit, :update, :destroy]
 
   # GET /invites
   # GET /invites.json
@@ -65,5 +67,8 @@ class InvitesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def invite_params
       params.require(:invite).permit(:email, :group_id)
+    end
+    def admin
+      redirect_to root_path unless current_user.admin == true
     end
 end

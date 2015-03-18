@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_instance, only: [:show, :edit, :update, :destroy, :current_tasks, :completed_tasks, :invite]
+  before_filter :authenticate_user!
 
   def index
   end

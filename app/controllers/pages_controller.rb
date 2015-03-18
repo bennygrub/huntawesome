@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_filter :new_home
+  
   def home
     @start = true
   end
@@ -15,4 +17,9 @@ class PagesController < ApplicationController
   def start
     @start = true
   end
+
+  private
+    def new_home
+      redirect_to current_user if current_user
+    end
 end

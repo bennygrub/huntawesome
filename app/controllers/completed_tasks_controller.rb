@@ -1,6 +1,6 @@
 class CompletedTasksController < ApplicationController
   before_action :set_completed_task, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!
   # GET /completed_tasks
   # GET /completed_tasks.json
   def index

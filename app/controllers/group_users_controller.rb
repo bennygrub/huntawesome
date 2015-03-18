@@ -1,5 +1,7 @@
 class GroupUsersController < ApplicationController
   before_action :set_group_user, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
+  before_filter :admin
 
   # GET /group_users
   # GET /group_users.json
@@ -70,5 +72,9 @@ class GroupUsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_user_params
       params.require(:group_user).permit(:user_id, :group_id)
+    end
+    
+    def admin
+      redirect_to root_path unless current_user.admin == true
     end
 end
