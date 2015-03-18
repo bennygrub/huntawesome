@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_instance, only: [:show, :edit, :update, :destroy, :current_tasks, :completed_tasks]
+  before_action :set_instance, only: [:show, :edit, :update, :destroy, :current_tasks, :completed_tasks, :invite]
 
   def index
   end
@@ -32,6 +32,14 @@ class UsersController < ApplicationController
     calculate_total_points
     level_figures(@total_points)
     @tasks = @completed_task_ids.map{|t| Task.find(t)}
+  end
+
+  def invite
+    calculate_total_points
+    level_figures(@total_points)
+    @group_members = @group.first.users
+    @invited_members = @group.first.invites
+    @invite = Invite.new
   end
 
   private

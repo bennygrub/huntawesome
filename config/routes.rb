@@ -1,4 +1,6 @@
 Huntawesome::Application.routes.draw do
+  resources :invites
+
   resources :completed_tasks
 
   resources :tasks
@@ -12,6 +14,7 @@ Huntawesome::Application.routes.draw do
     member do
       get :current_tasks
       get :completed_tasks
+      get :invite
     end
   end
 

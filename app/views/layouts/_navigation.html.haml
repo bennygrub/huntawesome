@@ -6,14 +6,15 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "/"} Hunt Awesome
+      %a.navbar-brand{:href => "/"}
+        =image_tag("huntawesome-logo-grey.png", style: "width: 170px;")
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
-        %li
-          =link_to "About", pages_about_path
-        %li
-          =link_to "How It Works", pages_faq_path
         -unless current_user
+          %li
+            =link_to "About", pages_about_path
+          %li
+            =link_to "How It Works", pages_faq_path
           %li.dropdown
             %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
               More
@@ -29,7 +30,11 @@
                 =link_to "Beware Click With Caution", pages_start_path
         -if current_user
           %li
-            = link_to 'My Profile', current_user
+            = link_to current_user do
+              %span.glyphicon.glyphicon-user
+              My Profile
           %li
-            = link_to 'Logout', destroy_user_session_path, :method=>'delete', class: 'logout-mp'
+            = link_to destroy_user_session_path, :method=>'delete', class: 'logout-mp' do
+              %span.glyphicon.glyphicon-off
+              Log Out
           

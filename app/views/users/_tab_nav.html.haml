@@ -1,8 +1,18 @@
 .navigation-area
   %ul.nav.nav-tabs
     %li{:class => "#{'active' if current_page?(action: 'show')}"}
-      =link_to "Profile Overview", current_user
+      =link_to current_user do
+        %span.glyphicon.glyphicon-globe
+        Awesomeness Overview
     %li{:class => "#{'active' if current_page?(action: 'current_tasks')}"}
-      =link_to "Your Current ToDo's", current_tasks_user_path(current_user)
+      =link_to current_tasks_user_path(current_user) do
+        %span.glyphicon.glyphicon-list-alt
+        Your Current ToDo's
     %li{:class => "#{'active' if current_page?(action: 'completed_tasks')}"}
-      =link_to "Awesomeness Archive", completed_tasks_user_path(current_user)
+      =link_to completed_tasks_user_path(current_user) do
+        %span.glyphicon.glyphicon-fire
+        Awesomeness Archive
+    %li{:class => "#{'active' if current_page?(action: 'invite')}"}
+      =link_to invite_user_path(current_user) do
+        %span.glyphicon.glyphicon-send
+        Invite to Your Group
