@@ -21,7 +21,9 @@ class User < ActiveRecord::Base
     else
       group = Group.create(name: self.group_name)
     end
-    GroupUser.create(user_id: self.id, group_id: group.id)
+    @group_user = GroupUser.create(user_id: self.id, group_id: group.id)
+    CompletedTask.create(user_id: self.id, group_id: group.id, task_id: 1)
+    CompletedTask.create(user_id: self.id, group_id: group.id, task_id: 2)
   end
 
 end
