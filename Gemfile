@@ -38,6 +38,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'haml'
 gem 'jquery-turbolinks'
+gem "paperclip", "~> 4.2"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

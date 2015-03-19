@@ -2,7 +2,7 @@
   .row.row-centered
     .col-xs-12.col-sm-10.col-md-8.col-lg-6.col-centered
       .text-center
-        =image_tag("task.png")
+        =image_tag @task.avatar.url(:medium)
         %h1
           = @task.name
         %h2 
