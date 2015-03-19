@@ -11,7 +11,7 @@
         %p
           = @task.description
           
-        -if 2 == 3
+        -if current_user.admin == true
           %p
             %strong Requirements:
             = @task.requirements

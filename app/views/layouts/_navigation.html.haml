@@ -37,4 +37,27 @@
             = link_to destroy_user_session_path, :method=>'delete', class: 'logout-mp' do
               %span.glyphicon.glyphicon-off
               Log Out
+          -if current_user.admin == true
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                Admin
+                %span.caret
+              %ul.dropdown-menu{:role => "menu"}
+                %li
+                  =link_to "Task", tasks_path
+                %li.divider
+                %li
+                  =link_to "Invites", invites_path
+                %li.divider
+                %li
+                  =link_to "Groups", groups_path
+                %li.divider
+                %li
+                  =link_to "Groups User Table", group_users_path
+                %li.divider
+                %li
+                  =link_to "Completed Tasks Table", completed_tasks_path
+                %li.divider
+                %li
+                  =link_to "Users", users_path
           

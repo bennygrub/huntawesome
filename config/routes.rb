@@ -10,7 +10,7 @@ Huntawesome::Application.routes.draw do
   resources :groups
 
   devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :index] do
     member do
       get :current_tasks
       get :completed_tasks
