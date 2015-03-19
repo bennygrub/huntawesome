@@ -13,6 +13,11 @@ class TasksController < ApplicationController
   # GET /tasks/1.json
   def show
     @completed_task = CompletedTask.new
+    @group_task = GroupTask.new
+    @group_task.task_documentations.build
+    group_id = current_user.groups.first.id
+    @group_task_object = GroupTask.where("group_id = ? AND task_id = ?", group_id, @task.id).first
+    @task_documentations = @group_task_object.task_documentations if @group_task_object
   end
 
   # GET /tasks/new

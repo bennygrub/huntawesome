@@ -1,0 +1,12 @@
+.nested-fields
+  %h4{style: "padding:0 0 10px 0"}
+    %b Challenge Memory
+  .field
+    = f.label "Add an image to this challenge"
+    = f.file_field :image
+  .field
+    = f.label "Add a note to go with the image or on its own"
+    %br
+    = f.text_area :description
+
+  = link_to_remove_association "remove memory", f

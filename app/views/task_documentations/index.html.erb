@@ -1,0 +1,27 @@
+<h1>Listing task_documentations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @task_documentations.each do |task_documentation| %>
+      <tr>
+        <td><%= task_documentation.description %></td>
+        <td><%= link_to 'Show', task_documentation %></td>
+        <td><%= link_to 'Edit', edit_task_documentation_path(task_documentation) %></td>
+        <td><%= link_to 'Destroy', task_documentation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task documentation', new_task_documentation_path %>

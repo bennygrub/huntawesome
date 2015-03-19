@@ -1,0 +1,10 @@
+= form_for @group_task do |f|
+  = f.hidden_field :group_id, value: current_user.groups.first.id
+  = f.hidden_field :task_id, value: @task.id
+  #task_documentations{style:"background:rgb(244, 244, 244);padding:10px;"}
+    = f.fields_for :task_documentations do |task|
+      = render 'task_documentation_fields', :f => task
+    .add-photos-notes
+      = link_to_add_association 'add another photo/note combo >>', f, :task_documentations
+    %div{style: "width:220px;"}
+      = f.submit "Submit Your Memories"

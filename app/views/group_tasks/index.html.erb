@@ -1,0 +1,29 @@
+<h1>Listing group_tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Task</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @group_tasks.each do |group_task| %>
+      <tr>
+        <td><%= group_task.group_id %></td>
+        <td><%= group_task.task_id %></td>
+        <td><%= link_to 'Show', group_task %></td>
+        <td><%= link_to 'Edit', edit_group_task_path(group_task) %></td>
+        <td><%= link_to 'Destroy', group_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Group task', new_group_task_path %>

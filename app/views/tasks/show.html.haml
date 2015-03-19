@@ -10,36 +10,31 @@
           = @task.points
         %p
           = @task.description
-          
+        =render "completed_task_button"  
+  .row.row-centered
+    .col-xs-12.col-sm-10.col-md-8.col-lg-6.col-centered
+      #task-documentation{style:"border-top:1px lightgrey solid;border-bottom:1px lightgrey solid;margin:40px 0;padding: 20px 0 30px 0;"}
+        .text-center
+          %h3
+            Document Your Awesome
+          %h4 Add Photos and Notes On Your Awesomeness
+        =render "documentation_form"
+
         -if current_user.admin == true
-          %p
-            %strong Requirements:
-            = @task.requirements
-          %p
-            %strong Level:
-            = @task.level
-          = link_to 'Edit', edit_task_path(@task)
-          |
-          #{link_to 'Back', current_user}
-        - if CompletedTask.where("group_id = ? AND task_id = ?", current_user.groups.first.id, @task.id).count == 0
-          = form_for(@completed_task) do |f|
-            - if @completed_task.errors.any?
-              #error_explanation
-                %h2
-                  = pluralize(@completed_task.errors.count, "error")
-                  prohibited this completed_task from being saved:
-                %ul
-                  - @completed_task.errors.full_messages.each do |msg|
-                    %li= msg
-            = f.hidden_field :user_id, value: current_user.id
-            = f.hidden_field :group_id, value: current_user.groups.first.id
-            = f.hidden_field :task_id, value: @task.id
-            .actions
-              = f.submit "I Completed This Task"
-        -else
-          %h3{style:"color: green;"} 
-            Task Has Been Completed! 
-            %br
-            You Earned
-            =@task.points
-            Points!
+          .hide
+            %p
+              %strong Requirements:
+              = @task.requirements
+            %p
+              %strong Level:
+              = @task.level
+            = link_to 'Edit', edit_task_path(@task)
+            |
+            #{link_to 'Back', current_user}
+  -unless @task_documentations.nil?
+    %h2.text-center{style: "margin:0 0 40px 0;"} Awesome Memories
+    .row.row-centered
+      -@task_documentations.each do |td|
+        .col-xs-12.col-sm-6.col-md-4
+          %p= image_tag td.image.url(:medium)
+          %p.text-center= td.description

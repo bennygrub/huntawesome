@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :groups, through: :group_users
   has_many :completed_tasks
   has_many :tasks, through: :completed_tasks
-
+  has_many :task_documentations
   def group_user_association
     if Invite.where( email == self.email).count > 1
       invite = Invite.where( email == self.email).first
