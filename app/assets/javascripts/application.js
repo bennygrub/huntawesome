@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery-smooth-scroll
 //= require turbolinks
 //= require cocoon
 //= require bootstrap-sprockets

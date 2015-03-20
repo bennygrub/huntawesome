@@ -41,6 +41,7 @@ gem 'jquery-turbolinks'
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
 gem "cocoon"
+gem 'jquery-smooth-scroll-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

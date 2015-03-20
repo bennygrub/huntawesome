@@ -22,3 +22,4 @@ jQuery ->
     top: ($(window).height() - $('.home-center').outerHeight()) / 3
   
   $(window).resize()
+  $('a').smoothScroll()
