@@ -10,6 +10,6 @@ class InviteMailer < ActionMailer::Base
     @user = User.find(user)
     @email = email
     @group = Group.find(group_id)
-    mail(to: "@email", subject: "#{@user.name} - Invited You to Join Their Scavenger Hunt Awesome Group")
+    mail(to: "#{@email}", subject: "#{@user.name} - Invited You to Join Their Scavenger Hunt Awesome Group")
   end
 end
