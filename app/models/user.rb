@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
     @group_user = GroupUser.create(user_id: self.id, group_id: group.id)
     CompletedTask.create(user_id: self.id, group_id: group.id, task_id: 1)
     CompletedTask.create(user_id: self.id, group_id: group.id, task_id: 2)
+    UserMailer.new_user(self.id).deliver
   end
 
 end
