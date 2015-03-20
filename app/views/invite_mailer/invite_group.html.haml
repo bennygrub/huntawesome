@@ -141,7 +141,7 @@
                             %td{:align => "center"}
                               .imgpop
                                 %a{:href => "#"}
-                                  %img#pjxvc4kjg42kpgb9.bigimage{:alt => "", :border => "0", :height => "282", :src => "http://www.huntawesome.com/homepage1.jpg", "st-image" => "edit", :style => "display:block; border:none; outline:none; text-decoration:none;", :width => "540"}/
+                                  %img#pjxvc4kjg42kpgb9.bigimage{:alt => "", :border => "0", :height => "282", :src => "http://www.huntawesome.com/home1.jpg", "st-image" => "edit", :style => "display:block; border:none; outline:none; text-decoration:none;", :width => "540"}/
                           / end of image
                           / Spacing
                           %tr
@@ -151,7 +151,7 @@
                           %tr
                             %td{"st-title" => "rightimage-title", :style => "font-family: Helvetica, arial, sans-serif; font-size: 18px; color: #333333; text-align:left;line-height: 20px;"}
                               %p
-                                Welcome to Hunt Awesome. Get Ready for the Most Awesome Month of Your Life!
+                                You're Invited to Hunt Awesome
                           / end of title
                           / Spacing
                           %tr
@@ -160,9 +160,19 @@
                           / content
                           %tr
                             %td{"st-content" => "rightimage-paragraph", :style => "font-family: Helvetica, arial, sans-serif; font-size: 13px; color: #95a5a6; text-align:left;line-height: 24px;"}
-                              %p Over the next month or so, you are going to scavneger hunt your way to Awesomeness. Through a series of small and medium challenges, you will feel more energized and alive and will simply just be having more fun.
                               %p
-                                Get ready for Awesome!
+                                %b=@user.name
+                                invited you to the group
+                                %b="#{@user.groups.first.name}."
+                              %br
+                              
+                              %p Hunt Awesome is a scavenger hunt where groups do small and medium tasks that are fun, exciting, and challenging. Through the tasks you will Do Awesome, Be Awesome, and Make Others Feel Awesome.
+                              %br
+                              
+                              %p
+                                Click the sign up button below to join
+                                =@user.name
+                                in the journey to Awesome.
                           / end of content
                           / Spacing
                           %tr
@@ -176,7 +186,7 @@
                                     %td{:align => "center", :height => "30", "st-title" => "read-more-button", :style => "padding-left:18px; padding-right:18px;font-family:Helvetica, arial, sans-serif; text-align:center;  color:#ffffff; font-weight: 300;", :valign => "middle", :width => "auto"}
                                       %p
                                         %span{:style => "color: #ffffff; font-weight: 300;"}
-                                          %a{:href => "http://www.huntawesome.com/users/sign_in", :style => "color: #ffffff; text-align:center;text-decoration: none;", :tabindex => "-1"} Check Out Your Awesome Challenges
+                                          %a{:href => "http://www.huntawesome.com/users/sign_up?solo=true", :style => "color: #ffffff; text-align:center;text-decoration: none;", :tabindex => "-1"} Check Out Your Awesome Challenges
                           / /button
                           / Spacing
                           %tr

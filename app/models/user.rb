@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
     CompletedTask.create(user_id: self.id, group_id: group.id, task_id: 1)
     CompletedTask.create(user_id: self.id, group_id: group.id, task_id: 2)
     UserMailer.new_user(self.id).deliver
+    UserMailer.welcome(self.id).deliver
   end
 
 end

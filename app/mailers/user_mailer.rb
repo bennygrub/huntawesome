@@ -7,8 +7,8 @@ class UserMailer < ActionMailer::Base
   #   en.user_mailer.welcome.subject
   #
   def welcome(user)
-    @greeting = "Hi"
-    mail(to: "#{@name} <#{@email}>", subject: "#{@request.contact_name} submitted a new event request")
+    @user = User.find(user)
+    mail(to: "#{@user.name} <#{@user.email}>", subject: "#{@user.name} - Its time for Awesome")
   end
 
   def new_user(user)

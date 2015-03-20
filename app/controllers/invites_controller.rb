@@ -28,7 +28,7 @@ class InvitesController < ApplicationController
   def create
     @invite = Invite.new(invite_params)
     @invite.email.split(/,\s*/).each do |email|
-      Invite.create(email: email, group_id: @invite.group_id)
+      Invite.create(email: email, group_id: @invite.group_id, user_id: @invite.user_id)
     end
     flash[:success] = 'Your Invites Have Been Sent'
     redirect_to :back
@@ -66,7 +66,7 @@ class InvitesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def invite_params
-      params.require(:invite).permit(:email, :group_id)
+      params.require(:invite).permit(:email, :group_id, :user_id)
     end
     def admin
       redirect_to root_path unless current_user.admin == true
