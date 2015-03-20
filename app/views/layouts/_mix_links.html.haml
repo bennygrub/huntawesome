@@ -1,21 +1,19 @@
 :javascript
-  mixpanel.track_links(".btn-home", "Home Button", {
+  mixpanel.track_links(".btn-home a", "Home Button");
+
+  mixpanel.track_links(".btn-home-white a", "Home Button White", {
       "referrer": document.referrer
   });
 
-  mixpanel.track_links(".btn-home-white", "Home Button White", {
+  mixpanel.track_links(".unveil-btn-one a", "Reveal First Challenge", {
       "referrer": document.referrer
   });
 
-  mixpanel.track_links(".unveil-btn-one", "Reveal First Challenge", {
+  mixpanel.track_links(".unveil-btn-two a", "Submit First Challenge", {
       "referrer": document.referrer
   });
 
-  mixpanel.track_links(".unveil-btn-two", "Submit First Challenge", {
-      "referrer": document.referrer
-  });
-
-  mixpanel.track_links(".unveil-btn-three", "Submit First Challenge", {
+  mixpanel.track_links(".unveil-btn-three a", "Submit First Challenge", {
       "referrer": document.referrer
   });
 
