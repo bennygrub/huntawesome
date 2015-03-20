@@ -1,5 +1,9 @@
 :javascript
-  mixpanel.track_links(".btn-home", "Reveal First Challenge", {
+  mixpanel.track_links(".btn-home", "Home Button", {
+      "referrer": document.referrer
+  });
+
+  mixpanel.track_links(".btn-home-white", "Home Button White", {
       "referrer": document.referrer
   });
 
