@@ -7,6 +7,12 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
+    @tasks_1 = Task.where("level = ?", 1)
+    @tasks_2 = Task.where("level = ?", 2)
+    @tasks_3 = Task.where("level = ?", 3)
+    @tasks_4 = Task.where("level = ?", 4)
+    @tasks_5 = Task.where("level = ?", 5)
+    @tasks_grid = initialize_grid(@tasks)
   end
 
   # GET /tasks/1

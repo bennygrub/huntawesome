@@ -1,0 +1,46 @@
+%h1 Listing tasks
+#admin-tasks-table
+  %table
+    %thead
+      %tr
+        %th Level #
+        %th Number of Challenges
+        %th Total Points
+      %tbody
+        %tr
+          %td Level 1
+          %td=@tasks_1.count
+          %td=Task.sum(:points, conditions: {level: 1})
+        %tr
+          %td Level 2
+          %td=@tasks_2.count
+          %td=Task.sum(:points, conditions: {level: 2})
+        %tr
+          %td Level 3
+          %td=@tasks_3.count
+          %td=Task.sum(:points, conditions: {level: 3})
+        %tr
+          %td Level 4
+          %td=@tasks_4.count
+          %td=Task.sum(:points, conditions: {level: 4})
+        %tr
+          %td Level 5
+          %td=@tasks_5.count
+          %td=Task.sum(:points, conditions: {level: 5})
+%p
+
+= grid(@tasks_grid) do |g|                                     
+  -g.column name: 'ID', attribute: 'id'
+  -g.column name: 'Title', attribute: 'name'
+  -g.column name: 'Description', attribute: 'description'
+  -g.column name: 'Points', attribute: 'points'
+  -g.column name: 'Level', attribute: 'level'
+  -g.column name: 'View' do |task|
+    -link_to "View", task
+  -g.column name: 'Edit' do |task|
+    -link_to "Edit", edit_task_path(task)
+  -g.column name: 'Delete' do |task|
+    -link_to "Delete", task, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+  = link_to 'New Task', new_task_path

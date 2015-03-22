@@ -16,5 +16,6 @@
 //= require jquery-smooth-scroll
 //= require turbolinks
 //= require cocoon
+//= require wice_grid
 //= require bootstrap-sprockets
 //= require_tree .
