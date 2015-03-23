@@ -5,12 +5,17 @@
   .hunt-progress
     .row
       .col-xs-12.col-sm-3
-        %h2.text-center
-          Level 
-          ="#{@level}"
-          Status    
+        %p{style:"font-size:12.5px;"}
+          %b 
+            Level 
+            =@level
+          =@level_description 
       .col-xs-12.col-sm-5
         %h4.text-center
+          %b
+            LEVEL 
+            ="#{@level}"
+          %br
           %span{style: "color:green;font-weight:bold;"}=@points_toward_next_level
           out of
           =@level_points

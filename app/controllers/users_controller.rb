@@ -59,25 +59,26 @@ class UsersController < ApplicationController
   def level_figures(total_points)
     if total_points < 2000
       @level = 1
-      @tasks = Task.where("level = ?", 1)
       @level_points = 2000
+      @level_description = "is all about warming up your Awesome muscles. So start small & pick the challenges you feel most comfortable with. Once you hit 2000 points, you'll be ready to turn up the Awesome in Level 2."
       #@level_1_total_points = Task.sum(:points, conditions: {id: @completed_task_ids, level: 1})
     elsif total_points < 4000
       @level = 2
-      @tasks = Task.where("level = ?", 2)
       @level_points = 2000
+      @level_description = "is where your Awesomeness begins to shine. Friends & family start to notice something different. They won't know what, but you know - it's your Awesomeness."
     elsif total_points < 6000
       @level = 3
-      @tasks = Task.where("level = ?", 3)
       @level_points = 2000
+      @level_description = "is when most hunters really start to step it up. Challenges should become second nature as fear is replaced with your inner Awesome."
     elsif total_points < 8000
       @level = 4
-      @tasks = Task.where("level = ?", 4)
       @level_points = 2000
+      @level_description = "means you are friggin Awesome. Congratulations - few make it this far. Go for the gold and challenge yourself. There is only one level to go."
     else
       @level = 5
-      @tasks = Task.where("level = ?", 5)
       @level_points = 2000
+      @level_description = "is unchartered territory of Awesome. Complete this level and hit the ultimate level of satisfaction and fun. If you do, you make it to our Wall of Awesome!"
     end
+    @tasks = Task.where("level = ?", @level)
   end
 end
