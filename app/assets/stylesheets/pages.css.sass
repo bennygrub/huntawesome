@@ -10,6 +10,25 @@
   -ms-border-radius:     $radius
   border-radius:         $radius
 
+=hiw-box($color)
+  background: $color
+  position: relative
+  min-height: 300px
+  padding: 60px 0px
+
+=hiw-after($color)
+  position: absolute
+  top: 98.1%
+  left: 63%
+  margin-left: -25%
+  content: ''
+  width: 0
+  height: 0
+  border-top: solid 50px $color
+  border-left: solid 50px transparent
+  border-right: solid 50px transparent
+  z-index: 2
+
 a:hover
   text-decoration: none
 
@@ -286,6 +305,19 @@ input[type="submit"]:hover
   p
     font-size: 12px
     line-height: 14px
+
+.hiw-box
+  +hiw-box(#efefef)
+
+.hiw-box-white
+  +hiw-box(#fff)
+
+.hiw-box:after
+  +hiw-after(#efefef)
+
+.hiw-box-white:after
+  +hiw-after(#fff)
+
 
 @media only screen and (max-width : 768px)
   body .home-center
