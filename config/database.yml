@@ -48,8 +48,8 @@ test:
   encoding: unicode
   database: huntawesome_test
   pool: 5
-  username: huntawesome
-  password:
+  username: bengruber
+  password: Bendog1309
 
 production:
   adapter: postgresql
@@ -57,4 +57,4 @@ production:
   database: huntawesome_production
   pool: 5
   username: huntawesome
-  password:
+  password: 
