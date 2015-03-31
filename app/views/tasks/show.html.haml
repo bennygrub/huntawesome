@@ -17,6 +17,13 @@
             = @task.requirements
           %br  
         =render "completed_task_button"  
+        -if current_user.admin == true
+          %p
+            %strong Level:
+            = @task.level
+          = link_to 'Edit Task', edit_task_path(@task)
+          |
+          #{link_to 'Back to List', current_user}
   .row.row-centered
     .col-xs-12.col-sm-10.col-md-8.col-lg-6.col-centered
       #task-documentation{style:"border-top:1px lightgrey solid;border-bottom:1px lightgrey solid;margin:40px 0;padding: 20px 0 30px 0;"}
@@ -25,18 +32,6 @@
             Document Your Awesome
           %h4 Add Photos and Notes On Your Awesomeness
         =render "documentation_form"
-
-        -if current_user.admin == true
-          .hide
-            %p
-              %strong Requirements:
-              = @task.requirements
-            %p
-              %strong Level:
-              = @task.level
-            = link_to 'Edit', edit_task_path(@task)
-            |
-            #{link_to 'Back', current_user}
   -unless @task_documentations.nil?
     %h2.text-center{style: "margin:0 0 40px 0;"} Awesome Memories
     .row.row-centered
