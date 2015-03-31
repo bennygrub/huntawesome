@@ -12,7 +12,7 @@ class TasksController < ApplicationController
     @tasks_3 = Task.where("level = ?", 3)
     @tasks_4 = Task.where("level = ?", 4)
     @tasks_5 = Task.where("level = ?", 5)
-    @tasks_5 = Task.where("level = ?", 6)
+    @tasks_6 = Task.where("level = ?", 6)
     @tasks_grid = initialize_grid(@tasks)
   end
 
