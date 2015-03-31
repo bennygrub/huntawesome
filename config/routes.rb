@@ -24,10 +24,10 @@ Huntawesome::Application.routes.draw do
   end
 
   get "pages/home"
-  get "pages/contact"
-  get "pages/about"
-  get "pages/faq"
-  get "pages/start"
+  get "pages/contact", :path => 'contact'
+  get "pages/about", :path => 'about'
+  get "pages/faq", :path => 'faq'
+  get "pages/start", :path => 'start'
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
