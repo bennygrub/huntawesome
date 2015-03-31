@@ -3,32 +3,32 @@
   %table
     %thead
       %tr
-        %th Level #
+        %th{style:"text-align:left;"} Level #
         %th Number of Challenges
         %th Total Points
       %tbody
         %tr
-          %td Level 1: Small Things
+          %td{style:"text-align:left;"} Level 1: Small Things
           %td=@tasks_1.count
           %td=Task.sum(:points, conditions: {level: 1})
         %tr
-          %td Level 2: Nostalgia
+          %td{style:"text-align:left;"} Level 2: Nostalgia
           %td=@tasks_2.count
           %td=Task.sum(:points, conditions: {level: 2})
         %tr
-          %td Level 3: Connecting With Others
+          %td{style:"text-align:left;"} Level 3: Connecting With Others
           %td=@tasks_3.count
           %td=Task.sum(:points, conditions: {level: 3})
         %tr
-          %td Level 4: The Awesome You
+          %td{style:"text-align:left;"} Level 4: The Awesome You
           %td=@tasks_4.count
           %td=Task.sum(:points, conditions: {level: 4})
         %tr
-          %td Level 5: Random Acts of Kindness
+          %td{style:"text-align:left;"} Level 5: Random Acts of Kindness
           %td=@tasks_5.count
           %td=Task.sum(:points, conditions: {level: 5})
         %tr
-          %td Level 6: Random Acts of Kindness
+          %td{style:"text-align:left;"} Level 6: Outside Your Comfort Zone
           %td=@tasks_6.count
           %td=Task.sum(:points, conditions: {level: 6})
 %p
