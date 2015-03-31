@@ -5,10 +5,17 @@
     .col-xs-12.col-md-3
       %h1
         %b= @group.first.name
-      %p
-        Current Level of Awesome:
-        = @level
+      %b Current Pillar:
+      %span.purple=@pillar
+      %br
+      %b Total Awesome Points:
+      %span.purple=@total_points
     .col-xs-12.col-md-6.col-md-offset-2
       .rule-box.text-center
         %h4 Scavenger Hunt Rules
-        %p Pick your favorite challenges from the available list and complete them to receive 'Awesome Points' which go towards conquering levels. Once you collect 2000 you move to the next level of Awesome. At each new level the challenges get harder & more creative while at the same time you get more Awesome.
+        %p 
+          Pick your favorite challenges from the available list and complete them to receive 'Awesome Points' which go towards conquering the 
+          ="#{@pillar} pillar." 
+          Once you collect 
+          ="#{@level_points}" 
+          you earn your pillar badge.

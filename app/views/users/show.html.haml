@@ -7,14 +7,12 @@
       .col-xs-12.col-sm-3
         %p{style:"font-size:12.5px;"}
           %b 
-            Level 
-            =@level
+            ="#{@pillar} Pillar:"
           =@level_description 
-      .col-xs-12.col-sm-5
+      .col-xs-12.col-sm-6
         %h4.text-center
           %b
-            LEVEL 
-            ="#{@level}"
+            ="#{@pillar} Pillar Status"
           %br
           %span{style: "color:green;font-weight:bold;"}=@points_toward_next_level
           out of
@@ -22,14 +20,12 @@
         .progress
           .progress-bar.progress-bar-info{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "20", :role => "progressbar", :style => "width: #{@level_percentage}%"}
             %span.sr-only 20% Complete
-      .col-xs-12.col-sm-4.text-center
+      .col-xs-12.col-sm-3.text-center
         %h4 Overall Awesome Points
         %span.point-circle
           %b{style: "color:white;"}=@total_points
   %h2 
-    Your
-    Level
-    ="#{@level}"
+    ="#{@pillar}"
     Challenges
   =render "users/task_list"
 

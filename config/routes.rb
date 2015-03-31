@@ -19,6 +19,7 @@ Huntawesome::Application.routes.draw do
       get :current_tasks
       get :completed_tasks
       get :invite
+      get :welcome
     end
   end
 

@@ -1,0 +1,48 @@
+%h1
+.row.row-centered
+  .col-xs-12.col-sm-10.col-centered
+    %h1 
+      Welcome To Your 
+      %b.purple HuntAwesome 
+      Scavenger Hunt
+    %p.large-p 
+      %b Over the next few weeks, you will be scavenger hunting your way through the 5 Pillars of Awesome. 
+      As you complete small challenges you will earn points towards fulfilling each pillar. Completing a Pillar earns you a Pillar Badge. Collect all 5 for total Awesomeness.
+
+    .line
+
+    %h2 The 5 Pillars of Awesome
+.row.row-centered
+  .col-xs-12.col-md-2.col-centered
+    .badge-box.text-center
+      =image_tag("momentum.png")
+      %h5 
+        %b Momentum
+  .col-xs-12.col-md-2.col-centered
+    .badge-box.text-center
+      =image_tag("nostalgia.png")
+      %h5 
+        %b Nostalgia
+  .col-xs-12.col-md-2.col-centered
+    .badge-box.text-center
+      =image_tag("connecting.png")
+      %h5 
+        %b Human Connections
+  .col-xs-12.col-md-2.col-centered
+    .badge-box.text-center
+      =image_tag("awesome.png")
+      %h5  
+        %b The Awesome You
+  .col-xs-12.col-md-2.col-centered
+    .badge-box.text-center
+      =image_tag("comfort-zone.png")
+      %h5
+        %b Comfort Busted
+
+.row.row-centered
+  .col-xs-12.col-md-6.col-centered
+    .text-center
+      =link_to user_path(current_user) do 
+        .btn-start
+          Start Momentum My Badge Now
+          %span.glyphicon.glyphicon-chevron-right
