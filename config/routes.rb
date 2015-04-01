@@ -1,4 +1,6 @@
 Huntawesome::Application.routes.draw do
+  resources :levels
+
   resources :task_documentations
 
   resources :group_tasks
