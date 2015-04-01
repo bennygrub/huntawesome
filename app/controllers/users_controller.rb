@@ -84,23 +84,22 @@ class UsersController < ApplicationController
       @level = 3
       @pillar = "Connecting with People"
       @level_points = 2000
-      @level_description = "is when most hunters really start to step it up. Challenges should become second nature as fear is replaced with your inner Awesome."
+      @level_description = "In order to really know your self you must first know others. Connect with others in fun and creative way to give and take the Awesome!"
     elsif Task.sum(:points, conditions: {id: @completed_task_ids, level: 4}) < 2000
       @level = 4
       @pillar = "The Awesome You"
       @level_points = 2000
-      @level_description = "means you are friggin Awesome. Congratulations - few make it this far. Go for the gold and challenge yourself. There is only one level to go."
-
+      @level_description = "Congratulations - few make it this far. Go for the gold and challenge yourself - this when you get to be the Awesome you."
     elsif Task.sum(:points, conditions: {id: @completed_task_ids, level: 5}) < 1000
       @level = 5
       @pillar = "Bonus Badge - Random Acts of Kindness"
       @level_points = 2000
-      @level_description = "means you are friggin Awesome. Congratulations - few make it this far. Go for the gold and challenge yourself. There is only one level to go."
-    else
+      @level_description = "Awesomeness is one part Kindness. So quickly deposit 1000 points of random awesomeness on your community."
+    elsif Task.sum(:points, conditions: {id: @completed_task_ids, level: 6}) < 1000
       @level = 6
       @pillar = "Out of Your Comfort Zone"
       @level_points = 2000
-      @level_description = "is unchartered territory of Awesome. Complete this level and hit the ultimate level of satisfaction and fun. If you do, you make it to our Wall of Awesome!"
+      @level_description = "We like to call it Unpredictably Awesome. In order to reach your potential you must stretch your current you. Get out there and reek some comfort stretching awesome while earning 2000 points and your Comfort Busted badge."
     end
     @tasks = Task.where("level = ?", @level)
   end
