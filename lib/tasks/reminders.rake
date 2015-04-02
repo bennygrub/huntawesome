@@ -1,7 +1,7 @@
 task :weekly_reminder => :environment do
-  User.all.each do |user|
-    #ReminderMailer.weekly(user).deliver
+  if Time.now.strftime("%A") == "Wednesday"
+    User.all.each do |user|
+      ReminderMailer.weekly(user).deliver
+    end
   end
-  user = User.find(2)
-  ReminderMailer.weekly(user).deliver
 end
