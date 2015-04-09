@@ -7,6 +7,7 @@ class CompletedTask < ActiveRecord::Base
   def update_user
     user_obj = User.find(self.user_id)
     user_obj.level == 1 || user_obj.level == 4 ? points = 1500 : points = 2000
+    #the above line will be changed with the Level point values and checking
     user_obj.update_level! if user_obj.tasks.where(level: user_obj.level).sum(:points) >= points
     user_obj.update_points(self.task.points)
   end
