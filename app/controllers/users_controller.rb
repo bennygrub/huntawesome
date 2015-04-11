@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_instance, only: [:show, :edit, :update, :destroy, :current_tasks, :completed_tasks, :invite]
   before_filter :authenticate_user!
+  before_filter :only_admin, only: [:show]
 
   def index
     @users = User.all
+    @users_grid = initialize_grid(@users)
   end
 
   def create
@@ -103,4 +105,9 @@ class UsersController < ApplicationController
     end
     @tasks = Task.where("level = ?", @level)
   end
+  
+  private
+    def only_admin
+      redirect_to current_user if current_user.admin != true && current_user.id != @user.id
+    end
 end

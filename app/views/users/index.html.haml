@@ -1,0 +1,14 @@
+%h1 Users
+
+= grid(@users_grid) do |g|                                     
+  -g.column name: 'ID', attribute: 'id'
+  -g.column name: 'Name', attribute: 'name'
+  -g.column name: 'Email', attribute: 'email'
+  -g.column name: 'Points', attribute: 'points'
+  -g.column name: 'Level', attribute: 'level'
+  -g.column name: 'Completed' do |user|
+    -user.completed_tasks.count
+  -g.column name: 'View' do |user|
+    -link_to "View", user
+  -g.column name: 'Delete' do |user|
+    -link_to "Delete", user, method: :delete, data: { confirm: 'Are you sure?' }
