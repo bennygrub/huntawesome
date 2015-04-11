@@ -4,12 +4,17 @@
   
   .hunt-progress
     .row
-      .col-xs-12.col-sm-3
-        %p{style:"font-size:12.5px;"}
-          %b 
-            ="#{level.name} Badge:"
-          =level.description
-      .col-xs-12.col-sm-6
+      .col-xs-12.col-sm-5
+        .col-xs-12.col-sm-5
+          .text-center
+            =image_tag(level.avatar.url)
+            %br
+            %b{style:"font-size:12.5px;"}="#{level.name} Badge"
+        .col-xs-12.col-sm-7
+          %p{style:"font-size:12.5px;padding-top:10px;"}
+            %b="#{level.name}:"
+            =level.description
+      .col-xs-12.col-sm-4
         %h4.text-center
           %b
             ="#{level.name} Badge Status"

@@ -71,7 +71,7 @@ class LevelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def level_params
-      params.require(:level).permit(:name, :description, :points, :pillar)
+      params.require(:level).permit(:name, :description, :points, :pillar, :avatar)
     end
     
     def admin

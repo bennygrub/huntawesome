@@ -11,5 +11,4 @@ module UsersHelper
   def percentage_of_level_complete
     (earned_level_points*1.00/level.points)*100
   end
-
 end
