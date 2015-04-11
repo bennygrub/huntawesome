@@ -16,7 +16,7 @@
           %br
           %span{style: "color:green;font-weight:bold;"}=earned_level_points
           out of
-          =@level_points
+          =level.points
         .progress
           .progress-bar.progress-bar-info{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "20", :role => "progressbar", :style => "width: #{percentage_of_level_complete}%"}
             %span.sr-only 20% Complete
