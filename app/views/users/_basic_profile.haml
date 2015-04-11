@@ -6,16 +6,16 @@
       %h1
         %b= @group.first.name
       %b Current Pillar:
-      %span.purple=@pillar
+      %span.purple=level.name
       %br
       %b Total Awesome Points:
-      %span.purple=@total_points
+      %span.purple=@user.points
     .col-xs-12.col-md-6.col-md-offset-2
       .rule-box.text-center
         %h4 Scavenger Hunt Rules
         %p 
           Pick your favorite challenges from the available list and complete them to receive 'Awesome Points' which go towards conquering the 
-          ="#{@pillar} pillar." 
+          ="#{level.name} pillar." 
           Once you collect 
-          ="#{@level_points}" 
+          ="#{level.points}" 
           you earn your pillar badge.
