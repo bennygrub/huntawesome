@@ -19,6 +19,8 @@ class ReminderMailer < ActionMailer::Base
   #
   def suggested(user)
     @user = User.find(user)
-    mail(to: "#{@user.name} <#{@user.email}>", subject: "#{@user.name} - Its time for Awesome")
+    level = @user.level
+    @task = Task.where("level = ?", level).sample
+    mail(to: "#{@user.name} <#{@user.email}>", subject: "#{@user.name} - Here's Your Friday Feature Challenge")
   end
 end
