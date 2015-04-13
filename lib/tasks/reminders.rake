@@ -7,9 +7,9 @@ task :weekly_reminder => :environment do
 end
 
 task :weekly_feature => :environment do
-  #if Time.now.strftime("%A") == "Friday"
-  #  User.all.each do |user|
-      ReminderMailer.suggested(2).deliver
-  #  end
-  #end
+  if Time.now.strftime("%A") == "Friday"
+    User.all.each do |user|
+      ReminderMailer.suggested(user.id).deliver
+    end
+  end
 end

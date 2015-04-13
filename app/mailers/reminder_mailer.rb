@@ -20,7 +20,8 @@ class ReminderMailer < ActionMailer::Base
   def suggested(user)
     @user = User.find(user)
     level = @user.level
-    @task = Task.where("level = ?", level).sample
+    completed_task_ids = @user.completed_tasks.pluck(:task_id)
+    @task = Task.where("level = ? AND id NOT IN (?)", level, completed_task_ids).sample
     mail(to: "#{@user.name} <#{@user.email}>", subject: "#{@user.name} - Here's Your Friday Feature Challenge")
   end
 end
