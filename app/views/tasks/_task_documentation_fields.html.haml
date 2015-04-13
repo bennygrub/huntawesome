@@ -1,11 +1,11 @@
 .nested-fields
   %h4{style: "padding:0 0 10px 0"}
-    %b Challenge Memory
+    %b Add a Memory Block
   .field
-    = f.label "Add an image to this challenge"
+    = f.label "Add an image to this challenge (optional)"
     = f.file_field :image
   .field
-    = f.label "Add a note to go with the image or on its own"
+    = f.label "Add a note to go with the image or on its own (optional)"
     %br
     = f.text_area :description
 

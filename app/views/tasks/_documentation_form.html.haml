@@ -1,7 +1,10 @@
+
 = form_for @group_task do |f|
   = f.hidden_field :group_id, value: current_user.groups.first.id
   = f.hidden_field :task_id, value: @task.id
   #task_documentations{style:"background:rgb(244, 244, 244);padding:10px;"}
+    %h3.text-center
+      Challenge Proof & Documentation
     = f.fields_for :task_documentations do |task|
       = render 'task_documentation_fields', :f => task
     .add-photos-notes
