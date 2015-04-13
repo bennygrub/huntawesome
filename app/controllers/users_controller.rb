@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @tasks = Task.where("level = ?", @user.level)
+    @levels = Level.order(pillar: :asc)
   end
 
   def current_tasks

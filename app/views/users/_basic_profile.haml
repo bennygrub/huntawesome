@@ -2,14 +2,16 @@
   .row
     .col-xs-12.col-md-1
       =image_tag("group-choice-2.png", style: "width:75px;")
+
     .col-xs-12.col-md-3
       %h1
         %b= @group.first.name
-      %b Current Pillar:
-      %span.purple=level.name
-      %br
-      %b Total Awesome Points:
-      %span.purple=@user.points
+      .row
+        .badges-progress
+          -@levels.each do |l|
+            .col-xs-1
+              =div_for @user, class: (l.pillar > @user.level ? 'grey-badge' : 'color') do
+                =image_tag(l.avatar.url, style: "width:25px;")
     .col-xs-12.col-md-6.col-md-offset-2
       .rule-box.text-center
         %h4 What Should I Do?
