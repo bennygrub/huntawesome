@@ -19,7 +19,6 @@ class UsersController < ApplicationController
 
   def show
     @tasks = Task.where("level = ?", @user.level)
-    @levels = Level.order(pillar: :asc)
   end
 
   def current_tasks
@@ -47,10 +46,10 @@ class UsersController < ApplicationController
   def set_instance
     @user = User.find(params[:id])
     @group = @user.groups
+    @levels = Level.order(pillar: :asc)
   end
-  
-  private
-    def only_admin
-      redirect_to current_user if current_user.admin != true && current_user.id != @user.id
-    end
+    
+  def only_admin
+    redirect_to current_user if current_user.admin != true && current_user.id != @user.id
+  end
 end
