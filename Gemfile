@@ -43,6 +43,18 @@ gem 'aws-sdk'
 gem "cocoon"
 gem 'jquery-smooth-scroll-rails'
 gem "wice_grid", '3.4.2'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+end
+
+group :test do 
+  gem 'faker'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy' 
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

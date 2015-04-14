@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 20150411214951) do
   create_table "levels", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "points"
     t.integer  "pillar"
+    t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar_file_name"
