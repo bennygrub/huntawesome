@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  attr_accessor :group_name
+  attr_accessor :group_name, :beta
   validates_presence_of :name
   after_create :group_user_association
   has_many :group_users

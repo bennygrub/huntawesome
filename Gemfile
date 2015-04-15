@@ -47,13 +47,15 @@ gem "wice_grid", '3.4.2'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
+  gem 'spring-commands-rspec'
+  gem 'vcr'
 end
-
 group :test do 
   gem 'faker'
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy' 
+  gem 'webmock'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

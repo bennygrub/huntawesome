@@ -5,5 +5,9 @@ FactoryGirl.define do
     f.description {Faker::Lorem.sentence}
     f.pillar {Faker::Number.digit}
     f.points 2000
-  end 
+  end
+  
+  factory :invalid_level, parent: :level do |f| 
+    f.name nil
+  end
 end
