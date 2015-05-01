@@ -6,6 +6,11 @@ class RegistrationsController < Devise::RegistrationsController
     @solo = params[:solo]
     super
   end
+
+  def create
+    @start = true
+    super
+  end
   
   def after_sign_up_path_for(resource)
     flash[:notice] = ""
