@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   validate :beta_user, on: :create
 
   def beta_user
-    if self.beta.blank?
+    if self.beta != "BLIST"
       errors.add(:beta, "code must be valid")
     end
   end
