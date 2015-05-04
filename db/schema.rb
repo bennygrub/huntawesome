@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150411214951) do
+ActiveRecord::Schema.define(version: 20150504192443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 20150411214951) do
   create_table "levels", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "pillar"
     t.integer  "points"
+    t.integer  "pillar"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar_file_name"
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 20150411214951) do
     t.string   "name"
     t.boolean  "admin",                  default: false
     t.integer  "level",                  default: 1
-    t.integer  "points",                 default: 500
+    t.integer  "points",                 default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
