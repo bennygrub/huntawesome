@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :completed_tasks
   has_many :tasks, through: :completed_tasks
   has_many :task_documentations
-  validate :beta_user, on: :create
+  #validate :beta_user, on: :create
 
   def beta_user
     if self.beta != "BLIST"
