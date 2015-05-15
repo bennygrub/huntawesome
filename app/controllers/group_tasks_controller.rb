@@ -1,5 +1,7 @@
 class GroupTasksController < ApplicationController
   before_action :set_group_task, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
+  before_filter :admin
 
   # GET /group_tasks
   # GET /group_tasks.json
@@ -67,6 +69,10 @@ class GroupTasksController < ApplicationController
   end
 
   private
+
+    def admin
+      redirect_to root_path unless current_user.admin == true
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_group_task
       @group_task = GroupTask.find(params[:id])

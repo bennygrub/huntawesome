@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_instance, only: [:show, :edit, :update, :destroy, :current_tasks, :completed_tasks, :invite]
   before_filter :authenticate_user!
-  before_filter :only_admin, only: [:show]
+  before_filter :only_me, only: [:show, :current_tasks, :completed_tasks, :invite]
+  before_filter :only_admin, only: [:index, :destroy]
 
   def index
     @users = User.all
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
   def destroy
   end
 
-  def show
+  def show    
     @tasks = Task.where("level = ?", @user.level)
   end
 
@@ -42,6 +43,11 @@ class UsersController < ApplicationController
   end
 
   private
+  
+  def only_me
+    flash[:notice] == "That not for you :)"
+    redirect_to current_user unless current_user.id == @user.id 
+  end
 
   def set_instance
     @user = User.find(params[:id])
