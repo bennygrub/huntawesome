@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   
   def only_me
     flash[:notice] == "That not for you :)"
-    redirect_to current_user unless current_user.id == @user.id 
+    redirect_to current_user unless current_user.id == @user.id || current_user.admin == true
   end
 
   def set_instance

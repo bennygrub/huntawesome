@@ -1,5 +1,7 @@
 class TaskDocumentationsController < ApplicationController
   before_action :set_task_documentation, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
+  before_filter :admin
 
   # GET /task_documentations
   # GET /task_documentations.json
@@ -62,6 +64,10 @@ class TaskDocumentationsController < ApplicationController
   end
 
   private
+
+    def admin
+      redirect_to root_path unless current_user.admin == true
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_task_documentation
       @task_documentation = TaskDocumentation.find(params[:id])
